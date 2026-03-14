@@ -93,7 +93,7 @@ function WelcomeScreen() {
               transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               src={brandLogo}
               alt={brandName}
-              className="h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36"
+              className="h-36 w-36 rounded-full object-cover sm:h-44 sm:w-44"
               loading="eager"
             />
           </div>

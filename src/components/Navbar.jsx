@@ -20,7 +20,7 @@ function Navbar() {
           <img
             src={brandLogo}
             alt={brandName}
-            className="h-10 w-10 rounded-xl object-cover shadow-lg shadow-[--primary]/20"
+            className="h-14 w-14 object-contain"
             loading="eager"
           />
           <span className="text-sm font-semibold tracking-tight text-[--primary] transition group-hover:text-[--secondary] sm:text-lg">
