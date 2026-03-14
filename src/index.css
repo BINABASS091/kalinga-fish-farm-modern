@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sora:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0b6e4f;
+  --secondary: #2c7da0;
+  --accent: #f4a261;
+  --bg-soft: #f8fafc;
+  --bg-ink: #0f172a;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 8% 5%, rgba(44, 125, 160, 0.18), transparent 38%),
+    radial-gradient(circle at 95% 15%, rgba(11, 110, 79, 0.15), transparent 32%),
+    radial-gradient(circle at 50% 90%, rgba(244, 162, 97, 0.08), transparent 28%),
+    linear-gradient(180deg, #f2f8fc 0%, #ffffff 48%, #f7fafc 100%);
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(44, 125, 160, 0.35);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(11, 110, 79, 0.5);
+}
+
+::selection {
+  background: rgba(44, 125, 160, 0.25);
+  color: #042f2e;
+}
+
+@layer components {
+  .section-shell {
+    @apply px-5 py-20 sm:px-8 lg:px-12;
+  }
+
+  .section-wrap {
+    @apply mx-auto w-full max-w-7xl;
+  }
+
+  .section-kicker {
+    @apply text-sm font-semibold uppercase tracking-[0.18em] text-[--secondary];
+  }
+
+  .section-title {
+    @apply mt-2 font-display text-3xl text-slate-900 sm:text-4xl;
+  }
+
+  .section-copy {
+    @apply mt-4 max-w-2xl text-slate-600;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/60 bg-white/85 shadow-[0_14px_44px_-18px_rgba(2,6,23,0.38)] backdrop-blur;
+  }
+}
