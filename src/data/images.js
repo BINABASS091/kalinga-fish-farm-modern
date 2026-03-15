@@ -89,10 +89,6 @@ export const heroSlides = [
     position: '50% 40%',
   },
   {
-    url: 'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772632439/catfish14_vg1p0y.jpg',
-    position: '50% 42%',
-  },
-  {
     url: 'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772632439/catfish17_regowx.jpg',
     position: '50% 44%',
   },

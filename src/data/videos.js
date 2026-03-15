@@ -32,13 +32,34 @@ const videoMeta = [
     title: 'Farm Activity Highlights',
     description: 'Operations snapshot from feeding, checks, and handling.',
   },
+  {
+    title: 'Innovation Program Showcase',
+    description: 'Showcase from our Innovation Program and modern aquaculture practices.',
+  },
 ]
 
 const mergedVideos = [...new Set([...extraVideos, ...cloudinaryVideos])]
 
 const selectedVideos = mergedVideos.length > 0 ? mergedVideos : fallbackVideos
 
-export const farmVideos = selectedVideos.slice(0, 5).map((url, index) => ({
+const farmHighlightsVideo =
+  'https://res.cloudinary.com/diyy8h0d9/video/upload/v1771856418/fish36_gkjav4.mp4'
+
+const innovationProgramVideo =
+  'https://res.cloudinary.com/diyy8h0d9/video/upload/v1771856323/fish50_nk8dax.mp4'
+
+const fillVideoAt = (index) => selectedVideos[index] ?? fallbackVideos[index] ?? selectedVideos[0] ?? ''
+
+const orderedShowcaseVideos = [
+  fillVideoAt(0),
+  fillVideoAt(1),
+  fillVideoAt(2),
+  fillVideoAt(3),
+  farmHighlightsVideo,
+  innovationProgramVideo,
+]
+
+export const farmVideos = orderedShowcaseVideos.map((url, index) => ({
   title: videoMeta[index]?.title ?? `Farm Video ${index + 1}`,
   description:
     videoMeta[index]?.description ?? 'Inside our farm operations and fish growth process.',
