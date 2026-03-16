@@ -78,22 +78,22 @@ function WelcomeScreen() {
           <Motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-            className="absolute inset-0 rounded-full"
+            className="absolute inset-0 rounded-3xl"
             style={{
               background:
                 'conic-gradient(from 0deg, #0b6e4f, #2c7da0, #f4a261, #0b6e4f)',
               padding: 3,
-              borderRadius: '50%',
+              borderRadius: '1.5rem',
             }}
           />
-          <div className="relative rounded-full bg-[#041f18] p-1.5">
+          <div className="relative rounded-3xl bg-[#041f18] p-1.5">
             <Motion.img
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               src={brandLogo}
               alt={brandName}
-              className="h-36 w-36 rounded-full object-cover sm:h-44 sm:w-44"
+              className="h-36 w-36 rounded-2xl object-contain bg-white/95 p-2 sm:h-44 sm:w-44"
               loading="eager"
             />
           </div>
@@ -101,7 +101,7 @@ function WelcomeScreen() {
           <Motion.div
             animate={{ scale: [1, 1.45], opacity: [0.4, 0] }}
             transition={{ duration: 2.2, repeat: Infinity, ease: 'easeOut' }}
-            className="absolute inset-0 rounded-full border-2 border-[#0b6e4f]"
+            className="absolute inset-0 rounded-3xl border-2 border-[#0b6e4f]"
           />
         </div>
 
