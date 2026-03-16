@@ -1,16 +1,40 @@
-# React + Vite
+# Kalinga Fish Farm - Iringa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React + Vite website for Kalinga Fish Farm, featuring:
 
-Currently, two official plugins are available:
+- Professional hero slideshow with curated farm images
+- Welcome screen with branded logo and animation
+- Product, gallery, process, stats, and contact sections
+- Video showcase section with 6 curated farm videos
+- Responsive design for desktop and mobile
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Site
 
-## React Compiler
+- https://kalinga-fish-farm-modern.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Icons
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Lint
+
+```bash
+npm run lint
+```
