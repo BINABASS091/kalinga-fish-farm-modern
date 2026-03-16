@@ -10,7 +10,13 @@ function Footer() {
       <div className="mx-auto grid w-full max-w-7xl gap-8 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <img src={brandLogo} alt={brandName} className="h-12 w-12 object-contain" />
+            <span className="inline-flex h-12 w-20 items-center justify-center">
+              <img
+                src={brandLogo}
+                alt={brandName}
+                className="h-full w-full object-contain object-center"
+              />
+            </span>
             <h3 className="font-display text-2xl text-white">{brandName}</h3>
           </div>
           <p className="mt-3 max-w-sm text-sm text-slate-400">

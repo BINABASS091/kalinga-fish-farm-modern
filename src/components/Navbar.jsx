@@ -16,13 +16,15 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/75 backdrop-blur-xl">
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
-        <a href="#home" className="group inline-flex items-center gap-3">
-          <img
-            src={brandLogo}
-            alt={brandName}
-            className="h-14 w-14 object-contain"
-            loading="eager"
-          />
+        <a href="#home" className="group inline-flex items-center gap-4">
+          <span className="inline-flex h-12 w-28 items-center justify-center sm:h-14 sm:w-36">
+            <img
+              src={brandLogo}
+              alt={brandName}
+              className="h-full w-full object-contain object-center drop-shadow-sm"
+              loading="eager"
+            />
+          </span>
           <span className="text-sm font-semibold tracking-tight text-[--primary] transition group-hover:text-[--secondary] sm:text-lg">
             {brandName}
           </span>

@@ -86,20 +86,20 @@ function WelcomeScreen() {
               borderRadius: '1.5rem',
             }}
           />
-          <div className="relative rounded-3xl bg-[#041f18] p-1.5">
+          <div className="relative rounded-[1.65rem] border border-white/15 bg-[#041f18]/90 p-2 shadow-2xl shadow-black/30 backdrop-blur">
             <Motion.img
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               src={brandLogo}
               alt={brandName}
-              className="h-36 w-36 rounded-2xl object-contain bg-white/95 p-2 sm:h-44 sm:w-44"
+              className="h-40 w-40 bg-white/95 p-2 object-contain object-center sm:h-48 sm:w-48"
               loading="eager"
             />
           </div>
           {/* Pulse ring */}
           <Motion.div
-            animate={{ scale: [1, 1.45], opacity: [0.4, 0] }}
+            animate={{ scale: [1, 1.22], opacity: [0.32, 0] }}
             transition={{ duration: 2.2, repeat: Infinity, ease: 'easeOut' }}
             className="absolute inset-0 rounded-3xl border-2 border-[#0b6e4f]"
           />
