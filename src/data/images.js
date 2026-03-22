@@ -105,16 +105,8 @@ const heroSlidesSource = [
     position: '50% 35%',
   },
   {
-    url: 'https://res.cloudinary.com/diyy8h0d9/image/upload/v1771856267/fish54_a7dg9d.jpg',
-    position: '50% 38%',
-  },
-  {
     url: 'https://res.cloudinary.com/diyy8h0d9/image/upload/v1771856249/fish68_o8hwrg.jpg',
     position: '50% 40%',
-  },
-  {
-    url: 'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772632439/catfish17_regowx.jpg',
-    position: '50% 44%',
   },
   {
     url: 'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772632440/catfish2_d2spxc.jpg',
