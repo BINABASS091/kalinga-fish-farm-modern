@@ -63,7 +63,7 @@ function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="relative mx-auto w-full max-w-7xl px-5 py-28 sm:px-8 sm:py-36 lg:px-12"
+        className="relative mx-auto flex w-full max-w-7xl flex-col items-center px-5 py-28 text-center sm:px-8 sm:py-36 lg:px-12"
         style={{ zIndex: 10 }}
       >
         {/* Kicker badge */}
@@ -72,7 +72,7 @@ function Hero() {
           Sustainable aquaculture · Iringa, Tanzania
         </div>
 
-        <h1 className="max-w-3xl font-display text-4xl font-bold leading-[1.12] text-white drop-shadow-lg sm:text-5xl lg:text-6xl">
+        <h1 className="mx-auto max-w-3xl font-display text-4xl font-bold leading-[1.12] text-white drop-shadow-lg sm:text-5xl lg:text-6xl">
           Sustainable Fish Farming &{' '}
           <span
             style={{
@@ -87,11 +87,11 @@ function Hero() {
           Products
         </h1>
 
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
           Premium Catfish and Tilapia raised with eco-conscious methods — plus hands-on farmer training and reliable supply for homes, restaurants, and retailers.
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           <a
             href="#about"
             className="rounded-full bg-[--accent] px-7 py-3.5 text-sm font-semibold text-slate-900 shadow-xl shadow-black/30 transition hover:translate-y-[-2px] hover:bg-amber-400"
@@ -107,7 +107,7 @@ function Hero() {
         </div>
 
         {/* Info chips */}
-        <div className="mt-12 flex flex-wrap gap-3">
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
           {[
             { label: 'Location', value: 'Iringa, Tanzania' },
             { label: 'Specialty', value: 'Catfish & Tilapia' },
@@ -115,7 +115,7 @@ function Hero() {
           ].map((item) => (
             <div
               key={item.label}
-              className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3.5 backdrop-blur-sm"
+              className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3.5 text-center backdrop-blur-sm"
             >
               <p className="text-[10px] uppercase tracking-[0.18em] text-white/60">{item.label}</p>
               <p className="mt-1 text-sm font-semibold text-white">{item.value}</p>
@@ -124,7 +124,7 @@ function Hero() {
         </div>
 
         {/* Slide dots */}
-        <div className="mt-10 flex items-center gap-2">
+        <div className="mt-10 flex items-center justify-center gap-2">
           {heroSlides.map((_, i) => (
             <button
               key={i}
