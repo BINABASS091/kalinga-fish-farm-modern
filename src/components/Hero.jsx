@@ -13,28 +13,30 @@ function Hero() {
     return () => window.clearInterval(intervalId)
   }, [])
 
+  useEffect(() => {
+    if (heroSlides.length <= 1) return
+    const nextIndex = (activeIndex + 1) % heroSlides.length
+    const preloaded = new Image()
+    preloaded.src = heroSlides[nextIndex].url
+  }, [activeIndex])
+
   return (
     <section
       id="home"
       className="relative isolate flex min-h-screen flex-col justify-center overflow-hidden"
     >
-      {/* Slide images — all pre-rendered and stacked, cross-fade via opacity */}
-      {heroSlides.map((slide, i) => (
-        <Motion.img
-          key={slide.url}
-          src={slide.url}
-          alt="Kalinga fish farm aquaculture"
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: slide.position, zIndex: 0 }}
-          loading={i === 0 ? 'eager' : 'lazy'}
-          initial={{ opacity: i === 0 ? 1 : 0 }}
-          animate={{
-            opacity: i === activeIndex ? 1 : 0,
-            scale: i === activeIndex ? 1 : 1.05,
-          }}
-          transition={{ duration: 1.4, ease: 'easeInOut' }}
-        />
-      ))}
+      {/* Single active slide to keep initial network usage low */}
+      <Motion.img
+        key={heroSlides[activeIndex].url}
+        src={heroSlides[activeIndex].url}
+        alt="Kalinga fish farm aquaculture"
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ objectPosition: heroSlides[activeIndex].position, zIndex: 0 }}
+        loading="eager"
+        initial={{ opacity: 0.25, scale: 1.04 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.1, ease: 'easeInOut' }}
+      />
 
       {/* Gradient overlay — directional dark left, lighter right for image visibility */}
       <div

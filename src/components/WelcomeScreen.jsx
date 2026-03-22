@@ -73,27 +73,27 @@ function WelcomeScreen() {
         className="relative z-10 flex flex-col items-center px-5 py-14 text-center"
       >
         {/* Logo ring */}
-        <div className="relative mb-8">
+        <div className="relative mb-8 h-44 w-44 sm:h-52 sm:w-52">
           {/* Rotating gradient ring */}
           <Motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-            className="absolute inset-0 rounded-3xl"
+            className="absolute inset-0 rounded-full"
             style={{
               background:
                 'conic-gradient(from 0deg, #0b6e4f, #2c7da0, #f4a261, #0b6e4f)',
               padding: 3,
-              borderRadius: '1.5rem',
+              borderRadius: '9999px',
             }}
           />
-          <div className="relative rounded-[1.65rem] border border-white/15 bg-[#041f18]/90 p-2 shadow-2xl shadow-black/30 backdrop-blur">
+          <div className="relative h-full w-full overflow-hidden rounded-full border border-white/15 bg-[#041f18]/90 p-2 shadow-2xl shadow-black/30 backdrop-blur">
             <Motion.img
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               src={brandLogo}
               alt={brandName}
-              className="h-40 w-40 bg-white/95 p-2 object-contain object-center sm:h-48 sm:w-48"
+              className="h-full w-full rounded-full bg-white/95 p-2 object-contain object-center"
               loading="eager"
             />
           </div>
@@ -101,7 +101,7 @@ function WelcomeScreen() {
           <Motion.div
             animate={{ scale: [1, 1.22], opacity: [0.32, 0] }}
             transition={{ duration: 2.2, repeat: Infinity, ease: 'easeOut' }}
-            className="absolute inset-0 rounded-3xl border-2 border-[#0b6e4f]"
+            className="absolute inset-0 rounded-full border-2 border-[#0b6e4f]"
           />
         </div>
 

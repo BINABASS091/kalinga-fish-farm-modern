@@ -25,9 +25,8 @@ function VideoSection() {
               <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-950">
                 <video
                   src={video.url}
-                  autoPlay
-                  muted
-                  loop
+                  controls
+                  preload="metadata"
                   playsInline
                   className="aspect-video w-full object-contain"
                 />

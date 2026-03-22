@@ -58,17 +58,40 @@ const remainingGallery = imageAssets.filter((url) => !orderedPreferredGallery.in
 
 const pickExisting = (url, fallback = '') => (imageAssets.includes(url) ? url : fallback)
 
+const optimizeCloudinary = (url, transform) => {
+  if (!url || !url.includes('res.cloudinary.com')) {
+    return url
+  }
+
+  if (url.includes('/upload/f_auto')) {
+    return url
+  }
+
+  return url.replace('/upload/', `/upload/${transform}/`)
+}
+
+const optimizeImage = (url, width = 1200) =>
+  optimizeCloudinary(url, `f_auto,q_auto,dpr_auto,w_${width},c_limit`)
+
+const optimizeHeroImage = (url) =>
+  optimizeCloudinary(url, 'f_auto,q_auto,dpr_auto,w_1920,c_limit')
+
 export const cloudinaryVideos = [...orderedPreferredVideos, ...remainingVideos]
 
-export const cloudinaryGallery = [...orderedPreferredGallery, ...remainingGallery]
+const gallerySource = [...orderedPreferredGallery, ...remainingGallery]
 
-export const heroImage = pickExisting(
-  'https://res.cloudinary.com/diyy8h0d9/image/upload/v1773498084/kalinga_logo_gyiwpq.png',
-  cloudinaryGallery[0] ?? '',
+export const cloudinaryGallery = gallerySource.map((url) => optimizeImage(url, 1200))
+
+export const heroImage = optimizeImage(
+  pickExisting(
+    'https://res.cloudinary.com/diyy8h0d9/image/upload/v1773498084/kalinga_logo_gyiwpq.png',
+    gallerySource[0] ?? '',
+  ),
+  900,
 )
 
 // Hero slides — 8 images rotating in the hero background
-export const heroSlides = [
+const heroSlidesSource = [
   {
     url: 'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772540691/WhatsApp_Image_2026-03-03_at_15.18.59_hsyuo7.jpg',
     position: '50% 50%',
@@ -99,22 +122,39 @@ export const heroSlides = [
   },
 ]
 
-export const aboutImage = pickExisting(
-  'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772540691/WhatsApp_Image_2026-03-03_at_15.18.59_hsyuo7.jpg',
-  cloudinaryGallery[1] ?? cloudinaryGallery[0] ?? '',
+export const heroSlides = heroSlidesSource.map((slide) => ({
+  ...slide,
+  url: optimizeHeroImage(slide.url),
+}))
+
+export const aboutImage = optimizeImage(
+  pickExisting(
+    'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772540691/WhatsApp_Image_2026-03-03_at_15.18.59_hsyuo7.jpg',
+    gallerySource[1] ?? gallerySource[0] ?? '',
+  ),
+  1200,
 )
 
 export const productImages = {
-  catfish: pickExisting(
-    'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772632443/catfish4_zjddvp.jpg',
-    cloudinaryGallery[2] ?? cloudinaryGallery[0] ?? '',
+  catfish: optimizeImage(
+    pickExisting(
+      'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772632443/catfish4_zjddvp.jpg',
+      gallerySource[2] ?? gallerySource[0] ?? '',
+    ),
+    1000,
   ),
-  tilapia: pickExisting(
-    'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772632449/black-tilapia-tilapia_hiqddv.jpg',
-    cloudinaryGallery[3] ?? cloudinaryGallery[1] ?? '',
+  tilapia: optimizeImage(
+    pickExisting(
+      'https://res.cloudinary.com/diyy8h0d9/image/upload/v1772632449/black-tilapia-tilapia_hiqddv.jpg',
+      gallerySource[3] ?? gallerySource[1] ?? '',
+    ),
+    1000,
   ),
-  fingerlings: pickExisting(
-    'https://res.cloudinary.com/diyy8h0d9/image/upload/v1771848218/fish14_o7o9vy.jpg',
-    cloudinaryGallery[4] ?? cloudinaryGallery[2] ?? '',
+  fingerlings: optimizeImage(
+    pickExisting(
+      'https://res.cloudinary.com/diyy8h0d9/image/upload/v1771848218/fish14_o7o9vy.jpg',
+      gallerySource[4] ?? gallerySource[2] ?? '',
+    ),
+    1000,
   ),
 }

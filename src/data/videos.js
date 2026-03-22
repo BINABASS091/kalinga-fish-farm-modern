@@ -50,6 +50,14 @@ const innovationProgramVideo =
 
 const fillVideoAt = (index) => selectedVideos[index] ?? fallbackVideos[index] ?? selectedVideos[0] ?? ''
 
+const optimizeCloudinaryVideo = (url) => {
+  if (!url || !url.includes('res.cloudinary.com') || url.includes('/upload/f_auto')) {
+    return url
+  }
+
+  return url.replace('/upload/', '/upload/f_auto,q_auto:eco,vc_auto/')
+}
+
 const orderedShowcaseVideos = [
   fillVideoAt(0),
   fillVideoAt(1),
@@ -63,5 +71,5 @@ export const farmVideos = orderedShowcaseVideos.map((url, index) => ({
   title: videoMeta[index]?.title ?? `Farm Video ${index + 1}`,
   description:
     videoMeta[index]?.description ?? 'Inside our farm operations and fish growth process.',
-  url,
+  url: optimizeCloudinaryVideo(url),
 }))
