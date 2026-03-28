@@ -64,7 +64,7 @@ function Contact() {
             </li>
             <li className="flex items-center gap-3">
               <FaMapMarkerAlt className="text-[--accent]" />
-              Iringa, Tanzania ({brandName})
+              Kaning'ombe, Masaka-Iringa Dc - Tanzania (Ward: Masaka) ({brandName})
             </li>
           </ul>
         </Motion.div>

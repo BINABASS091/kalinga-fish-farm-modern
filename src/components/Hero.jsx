@@ -109,8 +109,8 @@ function Hero() {
         {/* Info chips */}
         <div className="mt-12 flex flex-wrap justify-center gap-3">
           {[
-            { label: 'Location', value: 'Iringa, Tanzania' },
-            { label: 'Specialty', value: 'Catfish & Tilapia' },
+            { label: 'Location', value: "Kaning'ombe, Masaka-Iringa Dc - Tanzania" },
+            { label: 'Ward', value: 'Masaka' },
             { label: 'Support', value: 'Training & Supply' },
           ].map((item) => (
             <div

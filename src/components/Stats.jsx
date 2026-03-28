@@ -3,7 +3,7 @@ import { motion as Motion, useInView } from 'framer-motion'
 import { FaWater, FaFish, FaStar, FaHandshake } from 'react-icons/fa'
 
 const statsData = [
-  { label: 'Fish Ponds', value: 20, suffix: '+', icon: FaWater },
+  { label: 'Fish Ponds', value: 5, suffix: '', icon: FaWater },
   { label: 'Fish Produced', value: 10000, suffix: '+', icon: FaFish },
   { label: 'Years Experience', value: 5, suffix: '+', icon: FaStar },
   { label: 'Happy Customers', value: 100, suffix: '+', icon: FaHandshake },

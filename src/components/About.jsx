@@ -23,8 +23,8 @@ function About() {
           <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/60 bg-white/90 px-5 py-4 shadow-2xl shadow-slate-900/20 backdrop-blur-xl">
             <div className="grid grid-cols-3 divide-x divide-slate-200 text-center">
               <div className="px-2">
-                <p className="font-display text-2xl font-bold text-[--primary]">20+</p>
-                <p className="mt-0.5 text-xs text-slate-500">Active Ponds</p>
+                <p className="font-display text-2xl font-bold text-[--primary]">5</p>
+                <p className="mt-0.5 text-xs text-slate-500">Fish Ponds</p>
               </div>
               <div className="px-2">
                 <p className="font-display text-2xl font-bold text-[--primary]">5+</p>

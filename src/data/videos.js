@@ -13,27 +13,28 @@ const fallbackVideos = [
 
 const videoMeta = [
   {
-    title: 'Feeding Session at Sunrise',
-    description: 'Daily nutrition routines that improve healthy fish growth.',
+    title: 'REAL FISH SHOWCASE',
+    description:
+      'Real fish showcase from our ponds, highlighting healthy movement, water quality condition, natural behavior, and strong growth in our farm environment.',
   },
   {
-    title: 'Pond Activity Monitoring',
+    title: 'POND ACTIVITY MONITORING',
     description: 'Routine checks to maintain healthy pond conditions.',
   },
   {
-    title: 'Harvest and Sorting Day',
+    title: 'HARVEST AND SORTING DAY',
     description: 'Careful handling and sorting before distribution.',
   },
   {
-    title: 'Fresh Stock Pond View',
+    title: 'FRESH STOCK POND VIEW',
     description: 'A quick look at healthy fish movement in stocked ponds.',
   },
   {
-    title: 'Farm Activity Highlights',
+    title: 'FARM ACTIVITY HIGHLIGHTS',
     description: 'Operations snapshot from feeding, checks, and handling.',
   },
   {
-    title: 'Innovation Program Showcase',
+    title: 'INNOVATION PROGRAM SHOWCASE',
     description: 'Showcase from our Innovation Program and modern aquaculture practices.',
   },
 ]
@@ -44,6 +45,9 @@ const selectedVideos = mergedVideos.length > 0 ? mergedVideos : fallbackVideos
 
 const farmHighlightsVideo =
   'https://res.cloudinary.com/diyy8h0d9/video/upload/v1771856418/fish36_gkjav4.mp4'
+
+const freshStockPondVideo =
+  'https://res.cloudinary.com/diyy8h0d9/video/upload/v1771848228/fish24_qfwagk.mp4'
 
 const innovationProgramVideo =
   'https://res.cloudinary.com/diyy8h0d9/video/upload/v1771856323/fish50_nk8dax.mp4'
@@ -62,7 +66,7 @@ const orderedShowcaseVideos = [
   fillVideoAt(0),
   fillVideoAt(1),
   fillVideoAt(2),
-  fillVideoAt(3),
+  freshStockPondVideo,
   farmHighlightsVideo,
   innovationProgramVideo,
 ]
@@ -71,5 +75,5 @@ export const farmVideos = orderedShowcaseVideos.map((url, index) => ({
   title: videoMeta[index]?.title ?? `Farm Video ${index + 1}`,
   description:
     videoMeta[index]?.description ?? 'Inside our farm operations and fish growth process.',
-  url: optimizeCloudinaryVideo(url),
+  url: url === freshStockPondVideo ? freshStockPondVideo : optimizeCloudinaryVideo(url),
 }))
